@@ -1,0 +1,117 @@
+CREATE TABLE assignments
+ADD AssignmentId char 11
+ADD EmployeeId char 11
+ADD RequirementId char 11
+END
+CREATE TABLE departments
+ADD DepartmentId char 11
+ADD Name char 45
+ADD Location char 45
+ADD BedsTotal char 11
+END
+CREATE TABLE employee_certifications
+ADD EmployeeCertId char 11
+ADD EmployeeId char 11
+ADD RoleId char 11
+END
+CREATE TABLE employees
+ADD EmployeeId char 11
+ADD FirstName char 45
+ADD MiddleName char 45
+ADD LastName char 45
+ADD StreetAddress char 45
+ADD City char 45
+ADD State char 45
+ADD Zip char 11
+ADD FT/PT char 4
+ADD Salary char 20
+ADD Phone char 45
+END
+CREATE TABLE roles
+ADD RoleId char 11
+ADD Title char 45
+ADD Description char 255
+END
+CREATE TABLE schedules
+ADD ScheduleId char 11
+ADD WeekNumber char 11
+END
+CREATE TABLE shifts
+ADD ShiftId char 11
+ADD StartTime char 20
+ADD Duration char 11
+END
+CREATE TABLE staff_requirements
+ADD RequirementId char 11
+ADD DepartmentId char 11
+ADD RoleId char 11
+ADD ShiftId char 11
+ADD ScheduleId char 11
+ADD StartDate char 20
+ADD Quantity char 11
+ADD DayOfWeek char 4
+END
+INSERT INTO employees 2,Jodi,J.,Blackford,1800 Johnson Street,Raleigh,NC,27601,1,22.7,919-833-0135
+INSERT INTO employees 3,Christopher,V.,Boyers,4519 Hall Valley Drive,Pochar Pleasant,WV,25550,1,22.7,304-674-0126
+INSERT INTO employees 4,Michael,V.,Cope,1403 Ella Street,Redwood City,CA,94063,1,22,650-306-3426
+INSERT INTO employees 5,Kendra,J.,Dawson,3234 John Avenue,Tekonsha,MI,49092,1,22,517-767-6328
+INSERT INTO employees 1,Keith,K.,Barajas,3883 Bailey Drive,Marion,IA,52302,1,22,319-447-9185
+INSERT INTO departments 1,Emergency,1F,20
+INSERT INTO departments 2,Surgery,2F,5
+INSERT INTO departments 3,Maternity,3F,10
+INSERT INTO roles 1,Nurse,A registered nurse
+INSERT INTO roles 2,Surgeon,A specialized surgeon
+INSERT INTO roles 3,Doctor,A family doctor
+INSERT INTO shifts 1,00:00:00,6
+INSERT INTO shifts 2,06:00:00,6
+INSERT INTO shifts 3,12:00:00,6
+INSERT INTO shifts 4,18:00:00,6
+INSERT INTO employee_certifications 1,1,1
+INSERT INTO employee_certifications 2,2,1
+INSERT INTO employee_certifications 3,3,2
+INSERT INTO employee_certifications 4,4,2
+INSERT INTO employee_certifications 5,5,3
+INSERT INTO schedules 1,1
+INSERT INTO schedules 2,2
+INSERT INTO schedules 3,3
+INSERT INTO schedules 4,4
+INSERT INTO schedules 5,5
+INSERT INTO schedules 6,6
+INSERT INTO staff_requirements 1,1,1,3,1,2017-11-16,1,TR
+INSERT INTO staff_requirements 2,2,2,3,1,2017-11-16,2,TR
+INSERT INTO staff_requirements 3,2,3,3,1,2017-11-16,2,TR
+INSERT INTO staff_requirements 4,1,1,1,1,2017-11-17,1,FR
+INSERT INTO staff_requirements 5,2,2,4,1,2017-11-17,2,FR
+INSERT INTO staff_requirements 6,2,3,2,1,2017-11-17,1,FR
+INSERT INTO staff_requirements 7,1,2,3,1,2017-11-18,2,SA
+INSERT INTO staff_requirements 8,2,1,2,1,2017-11-18,2,SA
+INSERT INTO staff_requirements 9,3,3,1,1,2017-11-18,2,SA
+INSERT INTO staff_requirements 10,1,1,2,1,2017-11-19,1,SU
+INSERT INTO staff_requirements 11,1,1,4,1,2017-11-19,1,SU
+INSERT INTO staff_requirements 12,1,1,1,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 13,1,3,2,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 14,1,2,3,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 15,3,3,4,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 16,3,2,3,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 17,3,2,4,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 18,1,1,1,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 19,3,2,4,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 20,3,3,4,1,2017-11-22,1,WE
+INSERT INTO assignments 1,1,1
+INSERT INTO assignments 2,2,3
+INSERT INTO assignments 3,3,5
+INSERT INTO assignments 4,4,7
+INSERT INTO assignments 5,5,9
+INSERT INTO assignments 6,1,11
+INSERT INTO assignments 7,2,13
+INSERT INTO assignments 8,5,15
+INSERT INTO assignments 9,5,17
+INSERT INTO assignments 10,4,19
+SELECT StartDate, DayOfWeek, StartTime, Name, Title, Quantity
+FROM staff_requirements, departments, roles, shifts, schedules
+WHERE staff_requirements.DepartmentId = departments.DepartmentId
+AND staff_requirements.RoleId = roles.RoleId
+AND staff_requirements.ScheduleId = schedules.ScheduleId
+AND staff_requirements.ShiftId = shifts.ShiftId
+END
+

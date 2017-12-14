@@ -1,0 +1,273 @@
+CREATE TABLE assignments
+ADD AssignmentId char 11
+ADD EmployeeId char 11
+ADD RequirementId char 11
+END
+CREATE TABLE departments
+ADD DepartmentId char 11
+ADD Name char 45
+ADD Location char 45
+ADD BedsTotal char 11
+END
+CREATE TABLE employee_certifications
+ADD EmployeeCertId char 11
+ADD EmployeeId char 11
+ADD RoleId char 11
+END
+CREATE TABLE employees
+ADD EmployeeId char 11
+ADD FirstName char 45
+ADD MiddleName char 45
+ADD LastName char 45
+ADD StreetAddress char 45
+ADD City char 45
+ADD State char 45
+ADD Zip char 11
+ADD FT/PT char 4
+ADD Salary char 20
+ADD Phone char 45
+END
+CREATE TABLE roles
+ADD RoleId char 11
+ADD Title char 45
+ADD Description char 255
+END
+CREATE TABLE schedules
+ADD ScheduleId char 11
+ADD WeekNumber char 11
+END
+CREATE TABLE shifts
+ADD ShiftId char 11
+ADD StartTime char 20
+ADD Duration char 11
+END
+CREATE TABLE staff_requirements
+ADD RequirementId char 11
+ADD DepartmentId char 11
+ADD RoleId char 11
+ADD ShiftId char 11
+ADD ScheduleId char 11
+ADD StartDate char 20
+ADD Quantity char 11
+ADD DayOfWeek char 4
+END
+INSERT INTO employees 15,Christine,D.,Stringer,2661 Ryan Road,Sioux Falls,SD,57104,1,22.7,605-653-0135
+INSERT INTO employees 2,Jodi,J.,Blackford,1800 Johnson Street,Raleigh,NC,27601,1,22.7,919-833-0135
+INSERT INTO employees 6,Robert,I.,Gordon,1421 Roosevelt Street,Fremont,CA,94539,1,22.7,415-390-8471
+INSERT INTO employees 3,Christopher,V.,Boyers,4519 Hall Valley Drive,Pochar Pleasant,WV,25550,1,22.7,304-674-0126
+INSERT INTO employees 9,Karen,M.,Kadlec,3970 Parrill Court,Plymouth,IN,46563,1,28,219-604-4539
+INSERT INTO employees 14,Deborah,D.,Reid,4818 New Creek Road,Fort Wayne,IN,46802,1,28,260-242-7896
+INSERT INTO employees 4,Michael,V.,Cope,1403 Ella Street,Redwood City,CA,94063,1,22,650-306-3426
+INSERT INTO employees 11,Jared,J.,Nelson,669 Ottis Street,Shawnee,OK,74801,1,22,405-275-4143
+INSERT INTO employees 10,Henry,R.,Maynard,4786 Clifford Street,Concord,CA,94520,1,22,510-697-8950
+INSERT INTO employees 12,Kimberly,A.,Paddock,1643 Hillcrest Avenue,Bracharree,MA,2184,1,22,781-843-4678
+INSERT INTO employees 13,Rose,F.,Price,1333 Lunetta Street,Tampa,FL,33634,1,22,941-284-3995
+INSERT INTO employees 7,Karen,C.,Hebb,4128 Cedar Lane,Boston,MA,2114,1,22,617-570-2611
+INSERT INTO employees 5,Kendra,J.,Dawson,3234 John Avenue,Tekonsha,MI,49092,1,22,517-767-6328
+INSERT INTO employees 16,Denise,D.,Westra,2772 Round Table Drive,Cincinnati,OH,45203,1,22,513-826-7940
+INSERT INTO employees 1,Keith,K.,Barajas,3883 Bailey Drive,Marion,IA,52302,1,22,319-447-9185
+INSERT INTO employees 8,Nola,C.,Huffman,3860 Hillhaven Drive,Bellflower,CA,90706,1,22,323-796-8238
+INSERT INTO departments 1,Emergency,1F,20
+INSERT INTO departments 2,Surgery,2F,5
+INSERT INTO departments 3,Maternity,3F,10
+INSERT INTO roles 1,Nurse,A registered nurse
+INSERT INTO roles 2,Surgeon,A specialized surgeon
+INSERT INTO roles 3,Doctor,A family doctor
+INSERT INTO shifts 1,00:00:00,6
+INSERT INTO shifts 2,06:00:00,6
+INSERT INTO shifts 3,12:00:00,6
+INSERT INTO shifts 4,18:00:00,6
+INSERT INTO employee_certifications 1,1,1
+INSERT INTO employee_certifications 2,2,1
+INSERT INTO employee_certifications 3,3,1
+INSERT INTO employee_certifications 4,4,2
+INSERT INTO employee_certifications 5,5,2
+INSERT INTO employee_certifications 6,6,3
+INSERT INTO employee_certifications 7,7,1
+INSERT INTO employee_certifications 8,8,1
+INSERT INTO employee_certifications 9,9,3
+INSERT INTO employee_certifications 10,10,1
+INSERT INTO employee_certifications 11,11,1
+INSERT INTO employee_certifications 12,12,1
+INSERT INTO employee_certifications 13,13,1
+INSERT INTO employee_certifications 14,14,1
+INSERT INTO employee_certifications 15,15,3
+INSERT INTO employee_certifications 16,16,3
+INSERT INTO schedules 1,1
+INSERT INTO schedules 2,2
+INSERT INTO schedules 3,3
+INSERT INTO schedules 4,4
+INSERT INTO schedules 5,5
+INSERT INTO schedules 6,6
+INSERT INTO staff_requirements 1,1,1,3,1,2017-11-16,1,TR
+INSERT INTO staff_requirements 2,1,2,1,1,2017-11-16,1,TR
+INSERT INTO staff_requirements 3,1,3,3,1,2017-11-16,1,TR
+INSERT INTO staff_requirements 4,2,1,3,1,2017-11-16,1,TR
+INSERT INTO staff_requirements 5,2,2,3,1,2017-11-16,2,TR
+INSERT INTO staff_requirements 6,2,3,3,1,2017-11-16,2,TR
+INSERT INTO staff_requirements 7,2,2,1,1,2017-11-16,2,TR
+INSERT INTO staff_requirements 8,3,3,4,1,2017-11-16,1,TR
+INSERT INTO staff_requirements 9,3,3,3,1,2017-11-16,1,TR
+INSERT INTO staff_requirements 10,3,3,4,1,2017-11-16,1,TR
+INSERT INTO staff_requirements 11,1,1,1,1,2017-11-17,1,FR
+INSERT INTO staff_requirements 12,1,2,2,1,2017-11-17,1,FR
+INSERT INTO staff_requirements 13,1,3,2,1,2017-11-17,1,FR
+INSERT INTO staff_requirements 14,2,1,3,1,2017-11-17,1,FR
+INSERT INTO staff_requirements 15,2,2,4,1,2017-11-17,2,FR
+INSERT INTO staff_requirements 16,2,3,2,1,2017-11-17,1,FR
+INSERT INTO staff_requirements 17,2,2,1,1,2017-11-17,1,FR
+INSERT INTO staff_requirements 18,2,3,2,1,2017-11-17,1,FR
+INSERT INTO staff_requirements 19,3,3,3,1,2017-11-17,2,FR
+INSERT INTO staff_requirements 20,3,3,4,1,2017-11-17,1,FR
+INSERT INTO staff_requirements 21,1,1,1,1,2017-11-18,1,SA
+INSERT INTO staff_requirements 22,2,1,2,1,2017-11-18,1,SA
+INSERT INTO staff_requirements 23,2,2,3,1,2017-11-18,1,SA
+INSERT INTO staff_requirements 24,3,3,4,1,2017-11-18,1,SA
+INSERT INTO staff_requirements 25,3,2,3,1,2017-11-18,2,SA
+INSERT INTO staff_requirements 26,3,1,2,1,2017-11-18,2,SA
+INSERT INTO staff_requirements 27,3,3,1,1,2017-11-18,2,SA
+INSERT INTO staff_requirements 28,1,1,2,1,2017-11-19,1,SU
+INSERT INTO staff_requirements 29,1,1,4,1,2017-11-19,1,SU
+INSERT INTO staff_requirements 30,1,2,3,1,2017-11-19,2,SU
+INSERT INTO staff_requirements 31,1,3,4,1,2017-11-19,1,SU
+INSERT INTO staff_requirements 32,1,3,3,1,2017-11-19,2,SU
+INSERT INTO staff_requirements 33,2,2,1,1,2017-11-19,1,SU
+INSERT INTO staff_requirements 34,2,3,2,1,2017-11-19,1,SU
+INSERT INTO staff_requirements 35,3,2,3,1,2017-11-19,1,SU
+INSERT INTO staff_requirements 36,1,1,1,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 37,1,3,2,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 38,1,2,3,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 39,1,3,4,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 40,2,1,2,1,2017-11-20,2,MO
+INSERT INTO staff_requirements 41,2,2,3,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 42,2,3,4,1,2017-11-20,2,MO
+INSERT INTO staff_requirements 43,2,3,3,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 44,3,1,3,1,2017-11-20,2,MO
+INSERT INTO staff_requirements 45,3,3,4,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 46,3,3,2,1,2017-11-20,2,MO
+INSERT INTO staff_requirements 47,3,3,3,1,2017-11-20,1,MO
+INSERT INTO staff_requirements 48,1,1,4,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 49,1,3,2,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 50,2,1,3,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 51,2,1,4,1,2017-11-21,2,TU
+INSERT INTO staff_requirements 52,2,2,1,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 53,2,2,3,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 54,3,1,2,1,2017-11-21,2,TU
+INSERT INTO staff_requirements 55,3,2,3,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 56,3,3,4,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 57,3,2,3,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 58,3,2,4,1,2017-11-21,1,TU
+INSERT INTO staff_requirements 59,1,1,1,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 60,1,1,2,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 61,1,2,3,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 62,1,2,2,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 63,1,3,1,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 64,1,3,4,1,2017-11-22,2,WE
+INSERT INTO staff_requirements 65,2,1,3,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 66,2,2,2,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 67,2,3,3,1,2017-11-22,2,WE
+INSERT INTO staff_requirements 68,3,1,2,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 69,3,2,4,1,2017-11-22,1,WE
+INSERT INTO staff_requirements 70,3,3,4,1,2017-11-22,1,WE
+INSERT INTO assignments 1,1,1
+INSERT INTO assignments 2,2,2
+INSERT INTO assignments 3,3,3
+INSERT INTO assignments 4,4,4
+INSERT INTO assignments 5,5,5
+INSERT INTO assignments 6,6,6
+INSERT INTO assignments 7,7,7
+INSERT INTO assignments 8,8,8
+INSERT INTO assignments 9,9,9
+INSERT INTO assignments 10,10,10
+INSERT INTO assignments 11,1,11
+INSERT INTO assignments 12,2,12
+INSERT INTO assignments 13,5,13
+INSERT INTO assignments 14,7,14
+INSERT INTO assignments 15,9,15
+INSERT INTO assignments 16,10,16
+INSERT INTO assignments 17,11,17
+INSERT INTO assignments 18,13,18
+INSERT INTO assignments 19,15,19
+INSERT INTO assignments 20,16,20
+INSERT INTO assignments 21,5,21
+INSERT INTO assignments 22,6,22
+INSERT INTO assignments 23,7,23
+INSERT INTO assignments 24,8,24
+INSERT INTO assignments 25,9,25
+INSERT INTO assignments 26,10,26
+INSERT INTO assignments 27,11,27
+INSERT INTO assignments 28,4,28
+INSERT INTO assignments 29,6,29
+INSERT INTO assignments 30,7,30
+INSERT INTO assignments 31,8,31
+INSERT INTO assignments 32,11,32
+INSERT INTO assignments 33,14,33
+INSERT INTO assignments 34,15,34
+INSERT INTO assignments 35,16,35
+INSERT INTO assignments 36,4,36
+INSERT INTO assignments 37,5,37
+INSERT INTO assignments 38,6,38
+INSERT INTO assignments 39,7,39
+INSERT INTO assignments 40,8,40
+INSERT INTO assignments 41,9,41
+INSERT INTO assignments 42,10,42
+INSERT INTO assignments 43,11,43
+INSERT INTO assignments 44,12,44
+INSERT INTO assignments 45,13,45
+INSERT INTO assignments 46,14,46
+INSERT INTO assignments 47,15,47
+INSERT INTO assignments 48,1,48
+INSERT INTO assignments 49,2,49
+INSERT INTO assignments 50,3,50
+INSERT INTO assignments 51,4,51
+INSERT INTO assignments 52,5,52
+INSERT INTO assignments 53,5,53
+INSERT INTO assignments 54,6,54
+INSERT INTO assignments 55,7,55
+INSERT INTO assignments 56,8,56
+INSERT INTO assignments 57,9,57
+INSERT INTO assignments 58,10,58
+INSERT INTO assignments 59,1,59
+INSERT INTO assignments 60,2,60
+INSERT INTO assignments 61,5,61
+INSERT INTO assignments 62,6,62
+INSERT INTO assignments 63,7,63
+INSERT INTO assignments 64,9,64
+INSERT INTO assignments 65,10,65
+INSERT INTO assignments 66,11,66
+INSERT INTO assignments 67,12,67
+INSERT INTO assignments 68,14,68
+INSERT INTO assignments 69,15,69
+INSERT INTO assignments 70,16,70
+SELECT LastName, FirstName, Name, Title, StartDate, DayOfWeek, StartTime
+FROM employees, assignments, staff_requirements, shifts, departments, roles
+WHERE employees.EmployeeId = assignments.EmployeeId 
+AND assignments.RequirementId = staff_requirements.RequirementId 
+AND staff_requirements.ShiftId = shifts.ShiftId 
+AND staff_requirements.DepartmentId = departments.DepartmentId 
+AND staff_requirements.RoleId = roles.RoleId
+END
+
+SELECT StartDate, DayOfWeek, StartTime, Name, Title, Quantity
+FROM staff_requirements, departments, roles, shifts, schedules
+WHERE staff_requirements.DepartmentId = departments.DepartmentId
+AND staff_requirements.RoleId = roles.RoleId
+AND staff_requirements.ScheduleId = schedules.ScheduleId
+AND staff_requirements.ShiftId = shifts.ShiftId
+END
+
+SELECT Name, StartDate, DayOfWeek, StartTime, LastName, FirstName, Phone
+FROM departments, staff_requirements, assignments, employees, shifts
+WHERE staff_requirements.DepartmentId = d.DepartmentId
+AND staff_requirements.ShiftId = s.ShiftId
+AND assignments.RequirementId = staff_requirements.RequirementId 
+AND employees.EmployeeId = assignments.EmployeeId
+END
+
+SELECT Name, StartDate, DayOfWeek, StartTime, Salary * Duration
+FROM departments, staff_requirements, assignments, employees, shifts
+WHERE staff_requirements.DepartmentId = departments.DepartmentId
+AND assignments.RequirementId = staff_requirements.RequirementId
+AND employees.EmployeeId = assignments.EmployeeId
+AND staff_requirements.ShiftId = shifts.ShiftId
+END
